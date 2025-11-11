@@ -23,7 +23,7 @@ In essence, your single-class segmentation model will operate with two categoriz
 To address the limited size of <b>GSI Dataset-02 (Roads)</b>, which contains 2,000 images and overlay-masks respectively,
 we used our offline augmentation tool <a href="https://github.com/sarah-antillia/ImageMask-Dataset-Offline-Augmentation-Tool"> 
 ImageMask-Dataset-Offline-Augmentation-Tool</a> to augment the original dataset.
-<br><br>
+<br>
 <hr>
 <b>Actual Image Segmentation for Images of 572x572 pixels</b><br>
 As shown below, the inferred masks predicted by our segmentation model trained on the 
