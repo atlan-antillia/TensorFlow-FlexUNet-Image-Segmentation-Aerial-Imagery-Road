@@ -19,13 +19,10 @@ our Multiclass TensorFlowFlexUNet, which uses categorized masks, can also be app
 This is because it inherently treats the background as one category and your single-class mask data as a second category. 
 In essence, your single-class segmentation model will operate with two categorized classes within our Multiclass UNet framework.
 <br><br>
-
 <b>Data Augmentation Strategy</b><br>
 To address the limited size of <b>GSI Dataset-02 (Roads)</b>, which contains 2,000 images and overlay-masks respectively,
 we used our offline augmentation tool <a href="https://github.com/sarah-antillia/ImageMask-Dataset-Offline-Augmentation-Tool"> 
-ImageMask-Dataset-Offline-Augmentation-Tool</a>
-
- to augment the original dataset.
+ImageMask-Dataset-Offline-Augmentation-Tool</a> to augment the original dataset.
 <br><br>
 <hr>
 <b>Actual Image Segmentation for Images of 572x572 pixels</b><br>
@@ -60,7 +57,6 @@ Augmented dataset appear similar to the ground truth masks, but they lack precis
 1 Dataset Citation
 </h3>
 The dataset used here was derived from 
-
 <a href="https://gisstar.gsi.go.jp/gsi-dataset/02/H1-No17-572.zip">
 H1-No17-572.zip
 </a>
@@ -74,16 +70,13 @@ GSI: Geospatial Information Authority of Japan
 </a>
 <br>
 <br>
-
 <b>GSI Dataset-02 (Roads)</b><br>
-
 <b>Overview</b><br>
 This data is intended for use in machine learning, and is an 8-bit, 3-channel image of an aerial photograph taken with a 
 ground pixel size of 20 cm, with pixels that show roads labeled in red (RGB:#FF0000). <br>
 For use in machine learning, each piece of data consists of two pairs: the original image and the labeled image, 
 and each pair can be identified by its file name.
 <br><br>
-
 <b>Image specifications</b><br>
 Image sizes are available in two sizes: 572 x 572 pixels and 286 x 286 pixels. 
 Both images have a bit depth of 8 bits per channel and are in PNG format.<br>
@@ -146,7 +139,6 @@ The folder structure of the original H1-No17-572 dataset is the following.<br>
     ... 
       └─2000.png
 </pre>
-
 In our dataset, we generated each colorized mask from a pair of raw image and mask overy (mask-overlapped-image),
  by subtracting the raw image from the corresponding mask overlay, and colorizing the subtracted image with light-brown.<br> 
 As shown below, the generated colorized masks are slightly different from the original solid red mask in mask overlay. 
