@@ -292,7 +292,7 @@ By using this callback, on every epoch_change, the inference procedure can be ca
 
 
 In this experiment, the training process was terminated at epoch 26.<br><br>
-<img src="./projects/TensorFlowFlexUNet/Road/asset/train_console_output_at_epoch33.png" width="720" height="auto"><br>
+<img src="./projects/TensorFlowFlexUNet/Road/asset/train_console_output_at_epoch26.png" width="720" height="auto"><br>
 <br>
 
 <a href="./projects/TensorFlowFlexUNet/Road/eval/train_metrics.csv">train_metrics.csv</a><br>
