@@ -1,7 +1,11 @@
-<h2>TensorFlow-FlexUNet-Image-Segmentation-Aerial-Imagery-Road (2025/11/11)</h2>
+<h2>TensorFlow-FlexUNet-Image-Segmentation-Aerial-Imagery-Road (Updated: 2025/11/11)</h2>
 
 Toshiyuki Arai<br>
 Software Laboratory antillia.com<br>
+<br>
+<li>2025/11/11: Modified base_kernels parameter to be (7,7) in 
+<a href="./projects/TensorFlowFlexUNet/Road/train_eval_infer.config">
+train_eval_infer.config</a>, and retrained Road Segmentation model.</li>
 <br>
 This is the first experiment of Image Segmentation for <b>Aerial Imagery Road</b> (Singleclass)  based on 
 our <a href="./src/TensorFlowFlexUNet.py">TensorFlowFlexUNet</a>
@@ -192,7 +196,7 @@ Please move to ./projects/TensorFlowFlexUNet/Road and, and run the following bat
 <hr>
 
 <b>Model parameters</b><br>
-Defined a small <b>base_filters = 16</b> and large <b>base_kernels = (9,9)</b> for the first Conv Layer of Encoder Block of 
+Defined a small <b>base_filters = 16</b> and large <b>base_kernels = (7,7)</b> for the first Conv Layer of Encoder Block of 
 <a href="./src/TensorFlowFlexUNet.py">TensorFlowFlexUNet.py</a> 
 and a large num_layers (including a bridge between Encoder and Decoder Blocks).
 <pre>
@@ -204,7 +208,8 @@ image_channels = 3
 num_classes    = 2
 
 base_filters   = 16
-base_kernels   = (9,9)
+;base_kernels   = (9,9)
+base_kernels   = (7,7)
 num_layers     = 8
 dropout_rate   = 0.05
 dilation       = (1,1)
@@ -277,16 +282,16 @@ By using this callback, on every epoch_change, the inference procedure can be ca
 <b>Epoch_change_inference output at starting (epoch 1,2,3)</b><br>
 <img src="./projects/TensorFlowFlexUNet/Road/asset/epoch_change_infer_at_start.png" width="1024" height="auto"><br>
 <br>
-<b>Epoch_change_inference output at middlepoint (epoch 15,16,17)</b><br>
+<b>Epoch_change_inference output at middlepoint (epoch 12,13,14)</b><br>
 <img src="./projects/TensorFlowFlexUNet/Road/asset/epoch_change_infer_at_middlepoint.png" width="1024" height="auto"><br>
 <br>
 
-<b>Epoch_change_inference output at ending (epoch 31,32,33)</b><br>
+<b>Epoch_change_inference output at ending (epoch 24,25,26)</b><br>
 <img src="./projects/TensorFlowFlexUNet/Road/asset/epoch_change_infer_at_end.png" width="1024" height="auto"><br>
 <br>
 
 
-In this experiment, the training process was terminated at epoch 33.<br><br>
+In this experiment, the training process was terminated at epoch 26.<br><br>
 <img src="./projects/TensorFlowFlexUNet/Road/asset/train_console_output_at_epoch33.png" width="720" height="auto"><br>
 <br>
 
@@ -313,7 +318,7 @@ python ../../../src/TensorFlowFlexUNetEvaluator.py ./train_eval_infer.config
 </pre>
 
 Evaluation console output:<br>
-<img src="./projects/TensorFlowFlexUNet/Road/asset/evaluate_console_output_at_epoch33.png" width="720" height="auto">
+<img src="./projects/TensorFlowFlexUNet/Road/asset/evaluate_console_output_at_epoch26.png" width="720" height="auto">
 <br><br>Image-Segmentation-Road
 
 <a href="./projects/TensorFlowFlexUNet/Road/evaluation.csv">evaluation.csv</a><br>
@@ -321,8 +326,13 @@ Evaluation console output:<br>
 The loss (categorical_crossentropy) to this Road/test was not low, anot dice_coef_multiclass not high as shown below.
 <br>
 <pre>
+categorical_crossentropy,0.1376
+dice_coef_multiclass,0.927
+
+<!--
 categorical_crossentropy,0.1406
 dice_coef_multiclass,0.919
+-->
 </pre>
 <br>
 <h3>
