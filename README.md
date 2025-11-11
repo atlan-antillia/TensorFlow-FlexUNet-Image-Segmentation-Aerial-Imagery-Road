@@ -46,9 +46,9 @@ Augmented dataset appear similar to the ground truth masks, but they lack precis
 <td><img src="./projects/TensorFlowFlexUNet/Road/mini_test_output/804.png" width="320" height="auto"></td>
 </tr>
 <tr>
-<td><img src="./projects/TensorFlowFlexUNet/Road/mini_test/images/846.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/Road/mini_test/masks/846.png" width="320" height="auto"></td>
-<td><img src="./projects/TensorFlowFlexUNet/Road/mini_test_output/846.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/Road/mini_test/images/945.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/Road/mini_test/masks/945.png" width="320" height="auto"></td>
+<td><img src="./projects/TensorFlowFlexUNet/Road/mini_test_output/945.png" width="320" height="auto"></td>
 </tr>
 </table>
 <hr>
